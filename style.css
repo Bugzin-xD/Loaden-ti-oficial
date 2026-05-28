@@ -18,6 +18,7 @@ body {
     --bg-gradient: linear-gradient(145deg, #000027, #000050);
     --border: 1.5px solid rgba(93, 97, 121, 0.4);
     --header: rgba(17, 0, 58, 0.65);
+    --about: #11003a;
     --text-gradient: linear-gradient(145deg, rgb(0, 183, 255), rgb(0, 0, 114));
     --link-gradient: linear-gradient(145deg, #00f 30%, rgb(160, 119, 255) 70%);
     --hr-gradient: linear-gradient(145deg, rgb(0, 174, 255) 30%, rgb(191, 94, 211) 70%);
@@ -163,7 +164,7 @@ hr {
 
 .about {
     background-color: #759aff93;
-    color: var(--header);
+    color: var(--about);
 }
 
 .info {
