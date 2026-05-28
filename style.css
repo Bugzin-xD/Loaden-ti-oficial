@@ -1,0 +1,367 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #00f var(--header);
+}
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+:root {
+    --text: #d2e9ff;
+    --bg-gradient: linear-gradient(145deg, #000027, #000050);
+    --border: 1.5px solid rgba(93, 97, 121, 0.4);
+    --header: #11003a;
+    --text-gradient: linear-gradient(145deg, rgb(0, 183, 255), rgb(0, 0, 114));
+    --link-gradient: linear-gradient(145deg, #00f 30%, rgb(160, 119, 255) 70%);
+    --hr-gradient: linear-gradient(145deg, rgb(0, 174, 255) 30%, rgb(191, 94, 211) 70%);
+    --history-gradient: linear-gradient(154deg, rgb(0, 0, 97), rgb(39, 0, 75));
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--header);
+    border-left: var(--border);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--link-gradient);
+    border-radius: 10px;
+    border: 2px solid var(--header);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--history-gradient);
+}
+
+body {
+    background: var(--bg-gradient);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Trebuchet MS', 'Montserrat', sans-serif;
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+::selection {
+    background-color: rgba(0, 0, 255, 0.2);
+}
+
+section {
+    min-height: 100vh;
+    border-bottom: var(--border);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+section {
+    padding: 3vh 0;
+}
+
+section h1 {
+    text-align: center;
+}
+
+section p {
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+section > * {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.show-text {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+hr {
+    border: none;
+    background: var(--hr-gradient);
+    height: 5px;
+    width: 80px;
+    border-radius: 30px;
+    margin: 5px auto;
+}
+
+.header, .footer, .title-div {
+    min-height: auto;
+    display: block;
+}
+
+.header {
+    user-select: none;
+    padding: 15px;
+    min-height: 10vh;
+    background-color: var(--header);
+    text-align: center;
+    border-bottom: var(--border);
+    position: fixed;
+    min-width: 100%;
+    left:0;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.top {
+    min-height: 10vh;
+}
+
+.title {
+    color: var(--text);
+    text-align: center;
+    font-size: clamp(2.5rem, 8vw, 70px);
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.loaden-title {
+    background: var(--text-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.link {
+    background: var(--link-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: clamp(14px, 4vw, 18px);
+    transition: opacity 0.3s;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.link:hover {
+    opacity: 0.7;
+}
+
+.about {
+    background-color: #759aff93;
+    color: var(--header);
+}
+
+.info {
+    font-size: clamp(16px, 2vw, 22px);
+    width: 90%;
+    max-width: 95%;
+    margin: 30px auto;
+    padding: 0 25px;
+    line-height: 1.8;
+    text-align: left;
+}
+
+.history {
+    background: var(--history-gradient);
+}
+
+.services {
+    background: rgba(0, 0, 255, 0.2);
+}
+
+.zap {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    color: #0f0;
+    display: inline-block;
+}
+
+.contact {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    user-select: none;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.not-header:not(.zap):focus-visible {
+    outline: none;
+    text-shadow: 0 0 5px rgba(0, 183, 255, 0.8);
+    transform: scale(1.05);
+}
+
+.link:focus-visible {
+    outline: none;
+    text-shadow: 0 0 5px rgba(0, 183, 255, 0.8);
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
+}
+
+.link:focus-visible {
+    transform: scale(1.05);
+}
+
+.zap:focus-visible {
+    outline: none;
+    text-shadow: 0 0 5px rgba(30, 255, 0, 0.8);
+    transform: scale(1.05);
+}
+
+.contact a {
+    font-size: clamp(1.5rem, 6vw, 40px);
+    display: inline-flex;
+    flex-direction: column;
+    text-decoration: none;
+    padding: 0;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.contact h1 {
+    font-size: 50px;
+    user-select: text;
+}
+
+.not-header {
+    display: inline-block;
+    transition: all ease-in-out 0.3s;
+}
+
+.not-header:hover {
+    scale: 1.05;
+}
+
+.footer {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.rights {
+    color: rgba(128, 128, 128, 0.8);
+    font-style: italic;
+    font-size: 14px;
+}
+
+.main {
+    padding: 40vh 0;
+}
+
+canvas {
+    position: fixed;
+    z-index: -1;
+}
+
+.service-slider {
+    width: 90%;
+    max-width: 850px;
+    min-height: 280px;
+    margin: 80px auto 0;
+    position: relative;
+    user-select: none;
+}
+
+.service-card {
+    position: absolute;
+    inset: 0;
+    padding: 50px 35px;
+    border: var(--border);
+    border-radius: 25px;
+    background: rgba(17, 0, 58, 0.45);
+    backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.service-card.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.service-card h2 {
+    font-size: clamp(1.8rem, 5vw, 42px);
+    text-align: center;
+    background: var(--text-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.service-card p {
+    font-size: clamp(16px, 2vw, 22px);
+    line-height: 1.7;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+
+    .title {
+        padding: 0 20px;
+    }
+
+    .info {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 20px;
+        font-size: 18px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .service-slider {
+        width: 90%;
+        max-width: 100%;
+        min-height: 420px;
+    }
+
+    .service-card {
+        padding: 35px 25px;
+    }
+
+    .contact {
+        gap: 70px;
+        padding-top: 80px;
+        padding-bottom: 80px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .contact-links {
+        gap: 35px;
+    }
+
+    .header {
+        gap: 5px;
+        padding: 10px;
+    }
+
+    .link {
+        margin-right: 5px;
+    }
+
+}
